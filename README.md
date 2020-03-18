@@ -16,6 +16,7 @@ First release.
 1. Load waaps.ino file to arduino nano
 2. Connect BME280 to 3,3V GND and SCL -> A5, SDA -> A4
 3. Connect arduino using USB to the raspberry Pi
-4. Load wx.py /home/pi directory
-5. Set-up wx.py (lat,lon,com port)
-6. Set-up beacon exec on APRX config file
+4. Upload wx.py to /home/pi directory
+5. Set wx.py executable (sudo chmod +x wx.py)
+6. Edit and setup wx.py (lat,lon,com port)
+7. Setup beacon exec on APRX config file
