@@ -1,5 +1,7 @@
 # WAAPS
+
 WX ARDUINO APRX PYTHON SCRIPT
+
 WAAPS is a simple weather station project for APRX
 
 # v.1.0
