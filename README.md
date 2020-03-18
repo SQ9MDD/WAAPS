@@ -13,7 +13,7 @@ First release.
 3. will see later...
 
 ## Instruction
-1. Load waaps.ino file to arduino nano
+1. Load wx.ino file to arduino nano
 2. Connect BME280 to 3,3V GND and SCL -> A5, SDA -> A4
 3. Connect arduino using USB to the raspberry Pi
 4. Upload wx.py to /home/pi directory
