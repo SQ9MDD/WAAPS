@@ -75,10 +75,10 @@ def humi():
     humi = int(round(data_humi))
     if(humi == 100):
         humi = '00'
-    return(humi)
+    return('h' + str(humi))
 
 def baro():
-    baro = int(round(data_baro))
+    baro = int(round(data_baro*10))
     if(baro < 10000):
         zero = '0'
     else:
