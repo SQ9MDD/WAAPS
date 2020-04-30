@@ -20,15 +20,15 @@
 
 ################################### CONFIGURATION #######################################################
 #                                                                                                   	#
-wx_lat      	        = '5215.01N'                     	# coordinates APRS format           	#
-wx_lon      	        = '02055.58E'                    	# coordinates APRS format           	#
-wx_altitude             = '125'                             # meeters above sea lvl
-wx_comment  	        = 'WAAPS300 WX station on tests'   	# beacon comment		        #
-wx_err_comment 	        = 'No WX data'				# comment when no data avaiable		#
-ardu_wx_modell          = 'WAAPS300'                        	# WAAPS300 - basic modell Temp.Rh.Baro  #
-ardu_wx_seriall         = 'COM17'                        # Where your WX is connected to         #
-ardu_wx_speed           = 9600                              	# Serial port speed                     #
-#										      	                #
+wx_lat      	        = '5215.01N'                     	# coordinates APRS format           	    #
+wx_lon      	        = '02055.58E'                    	# coordinates APRS format           	    #
+wx_altitude             = '125'                             # meeters above sea lvl                     #
+wx_comment  	        = 'WAAPS300 WX station on tests'   	# beacon comment		                    #
+wx_err_comment 	        = 'No WX data'				        # comment when no data avaiable		        #
+ardu_wx_modell          = 'WAAPS300'                        # WAAPS300 - basic modell Temp.Rh.Baro      #
+ardu_wx_seriall         = 'COM17'                           # Where your WX is connected to             #
+ardu_wx_speed           = 9600                              # Serial port speed                         #
+#										      	                                                        #
 ######################## DO NOTE EDIT BELLOW THIS LINE ##################################################
 
 import serial
