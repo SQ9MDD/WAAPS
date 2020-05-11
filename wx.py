@@ -5,18 +5,38 @@
 # SQ9MDD@2020 released under GPL.v.2
 # http://sq9mdd.qrz.pl
 #
-# ramka pogodowa bez pozycji z czasem
-# _mm dd gg mm                temp hum  baro
-# _03 29 06 58 c025 s009 g008 t030 r000 p000 P000 h00 b10218
-#
+# weather frame with position without time structure
 # ramka pogodowa z pozycja bez czasu
-#                        _                temp hum  baro
-# ! 5215.01N / 02055.58E _ ... / ... g... t030 r000 p000 P000 h00 b10218
+
+#   !               - required      identifier
+#   5215.01N        - required      latitude
+#   /               - required      symbol table
+#   02055.58E       - required      longtitude
+#   _               - required      icon (must be WX)
+#   ...             - required      wind direction (from 0-360) if no data set: "..."         
+#   /               - required      separator
+#   ...             - required      wind speed (average last 1 minute) if no data set: "..."          
+#   g...            - required      wind gust (max from last 5 mins) if no data set: "g..." 
+#   t030            - required      temperature in fahrenheit    
+#   r000            - option        rain xxx
+#   p000            - option        rain xxx
+#   P000            - option        rain xxx  
+#   h00             - option        relative humidity (00 means 100%Rh)     
+#   b10218          - option        atmosferic pressure in hPa multiple 10  
+#   Fxxxx           - option        water level above or below flood stage see: http://aprs.org/aprs12/weather-new.txt
+#   V138            - option        battery volts in tenths   128 would mean 12.8 volts
+#   Xxxx            - option        radiation lvl
+#
+# temp z sieci APRSjest w fahrenheit przeliczanie na C =(F-32)/9*5
+# temp w celsjusz do sieci APRS trzeba wyslac jako fahrenheit F = (C*9/5)+32
 #
 # temp z sieci APRSjest w fahrenheit przeliczanie na C =(F-32)/9*5
 # temp w celsjusz do sieci APRS trzeba wyslac jako fahrenheit F = (C*9/5)+32
 # model      returns
 # WAAPS300 - WAAPS300*20.00*1010.10*99
+# TODO:
+#       - wind speed, gust and direction (under developing)
+#       - rain gauge
 
 ################################### CONFIGURATION #######################################################
 #                                                                                                   	#
@@ -90,7 +110,7 @@ def baro():
 # make WX data
 def wx_data():
     outside_temp_label = outside_temp()
-    return('!' + str(wx_lat) + '/' + str(wx_lon) + '_' + str(wind_direction()) + '/' + str(wind_speed()) + str(wind_gust()) + str(outside_temp()) + str(rain_1h()) + str(rain_24h()) + str(rain_midnight()) + str(humi()) + str(baro()) + ' ' + str(wx_comment))
+    return('!' + str(wx_lat) + '/' + str(wx_lon) + '_' + str(wind_direction()) + '/' + str(wind_speed()) + str(wind_gust()) + str(outside_temp()) + str(rain_1h()) + str(rain_24h()) + str(rain_midnight()) + str(humi()) + str(baro()) + 'laDu' + ' ' + str(wx_comment))
 
 while True:
     reading = ser.readline()
